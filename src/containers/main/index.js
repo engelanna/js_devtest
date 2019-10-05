@@ -5,13 +5,15 @@ import VideoInformationRecordsSection from "../video_information_records_section
 import NavigationBar from "../navigation_bar";
 
 const Main = () => (
-  <Router>
-    <NavigationBar />
+  <div className="container-fluid">
+    <Router>
+      <NavigationBar />
 
-    <Switch>
-      <Sections />
-    </Switch>
-  </Router>
+      <Switch>
+        <Sections />
+      </Switch>
+    </Router>
+  </div>
 );
 
 const Sections = () => (

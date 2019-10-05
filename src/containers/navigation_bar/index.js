@@ -4,7 +4,7 @@ import Header from "./components/header";
 import DropdownsBar from "./components/dropdowns_bar";
 
 const NavigationBar = () => (
-  <nav className="navbar navbar-default">
+  <nav className="navbar navbar-header navbar-default">
     <Header />
     <DropdownsBar />
   </nav>

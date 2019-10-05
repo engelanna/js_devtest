@@ -1,13 +1,9 @@
-import { VIDEO_INFORMATION_RECORD_ACTION_TYPES } from "../../actions/video_information_records";
-
-const initialState = {
-  allIds: [],
-  byIds: {}
-};
+import { actionTypes } from "../../actions/video_information_records";
+import initialState from "./initial_state.js";
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case VIDEO_INFORMATION_RECORD_ACTION_TYPES.ADD_VIDEO_INFORMATION_RECORD: {
+    case actionTypes.CREATE_VIDEO_INFORMATION_RECORD: {
       const { id, content } = action.payload;
       return {
         ...state,
@@ -21,7 +17,7 @@ export default function(state = initialState, action) {
         }
       };
     }
-    case VIDEO_INFORMATION_RECORD_ACTION_TYPES.EDIT_VIDEO_INFORMATION_RECORD: {
+    case actionTypes.UPDATE_VIDEO_INFORMATION_RECORD: {
       const { id } = action.payload;
       return {
         ...state,

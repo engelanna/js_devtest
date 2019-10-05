@@ -6,7 +6,7 @@ import paths from "../../../../../../shared/config/app_paths.js";
 import styles from "./video_information_records_dropdown.module.scss";
 
 const VideoInformationRecordsDropdown = () => (
-  <ul className={`nav navbar-nav ${styles.pointer}`}>
+  <ul className={`nav navbar-nav ${styles.menu}`}>
     <li className="dropdown">
       <Header />
       <Links />

@@ -1,23 +1,27 @@
-export const VIDEO_INFORMATION_RECORD_ACTION_TYPES = {
-  ADD_VIDEO_INFORMATION_RECORD: "addVideoInformationRecord",
-  EDIT_VIDEO_INFORMATION_RECORD: "editVideoInformationRecord",
+export const actionTypes = {
+  CREATE_VIDEO_INFORMATION_RECORD: "createVideoInformationRecord",
+  UPDATE_VIDEO_INFORMATION_RECORD: "updateVideoInformationRecord",
   DELETE_VIDEO_INFORMATION_RECORD: "deleteVideoInformationRecord"
 };
 
-export const addVideoInformationRecord = content => ({
-  type: VIDEO_INFORMATION_RECORD_ACTION_TYPES.ADD_VIDEO_INFORMATION_RECORD,
-  payload: {
-    id: 1,
-    content
-  }
-});
+const actions = {
+  createVideoInformationRecord: content => ({
+    type: actionTypes.CREATE_VIDEO_INFORMATION_RECORD,
+    payload: {
+      id: 1,
+      content
+    }
+  }),
 
-export const editVideoInformationRecord = id => ({
-  type: VIDEO_INFORMATION_RECORD_ACTION_TYPES.EDIT_VIDEO_INFORMATION_RECORD,
-  payload: { id }
-});
+  updateVideoInformationRecord: id => ({
+    type: actionTypes.UPDATE_VIDEO_INFORMATION_RECORD,
+    payload: { id }
+  }),
 
-export const deleteVideoInformationRecord = id => ({
-  type: VIDEO_INFORMATION_RECORD_ACTION_TYPES.DELETE_VIDEO_INFORMATION_RECORD,
-  payload: { id }
-});
+  deleteVideoInformationRecord: id => ({
+    type: actionTypes.DELETE_VIDEO_INFORMATION_RECORD,
+    payload: { id }
+  })
+};
+
+export default actions;
