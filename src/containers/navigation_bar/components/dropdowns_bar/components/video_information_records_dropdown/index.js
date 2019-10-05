@@ -24,7 +24,7 @@ const Links = () => {
   const { browse, create } = paths.video_information_records;
 
   return (
-    <ul className="nav-right dropdown-menu">
+    <ul className="dropdown-menu pull-right">
       <li>
         <Link to={browse} className="btn">
           Browse
