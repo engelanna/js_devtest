@@ -1,4 +1,20 @@
-.menu {
+.menu_container {
   cursor: pointer;
   margin-left: 0.1em;
+}
+
+.menu {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .divider {
+    margin-top: 0;
+    margin-bottom: 0;
+    min-height: 0.5vh;
+  }
+
+  .button {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
 }
