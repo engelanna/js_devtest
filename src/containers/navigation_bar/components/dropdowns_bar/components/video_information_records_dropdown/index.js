@@ -21,7 +21,6 @@ const Header = () => (
 );
 
 const Links = () => {
-  console.info(paths);
   const { browse, create } = paths.video_information_records;
 
   return (
