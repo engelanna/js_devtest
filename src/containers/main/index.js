@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 
 import VideoInformationRecordsSection from "../video_information_records_section";
 import NavigationBar from "../navigation_bar";
+import routes from "../../shared/config/routes.js";
 
 const Main = () => (
   <div className="container-fluid">
@@ -17,7 +18,7 @@ const Main = () => (
 );
 
 const Sections = () => (
-  <Route path="/video_information_records">
+  <Route path={routes.video_information_records.base}>
     <VideoInformationRecordsSection />
   </Route>
 );

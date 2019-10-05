@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import paths from "../../../../../../shared/config/app_paths.js";
+import paths from "../../../../../../shared/config/routes.js";
 
 import styles from "./video_information_records_dropdown.module.scss";
 

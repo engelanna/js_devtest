@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
 
-import videoInformationRecordsReducer from "./video_information_records";
+import videoInformationRecords from "./video_information_records";
 
-export default combineReducers({ videoInformationRecordsReducer });
+export default combineReducers({ videoInformationRecords });
