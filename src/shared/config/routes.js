@@ -1,6 +1,5 @@
 const video_information_records = {
-  base: "/video_information_records/",
-  browse: "/video_information_records/browse",
+  browse: "/video_information_records",
   create: "/video_information_records/create"
 };
 

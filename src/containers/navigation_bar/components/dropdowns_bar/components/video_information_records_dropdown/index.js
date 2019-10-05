@@ -26,7 +26,7 @@ const Links = () => {
   return (
     <ul className={`dropdown-menu pull-right ${styles.menu}`}>
       <li>
-        <Link to={browse} className="btn" className={`btn ${styles.button}`}>
+        <Link to={browse} className={`btn ${styles.button}`}>
           Browse
         </Link>
       </li>

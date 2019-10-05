@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import VideoInformationRecordsSection from "../video_information_records_section";
 import NavigationBar from "../navigation_bar";
