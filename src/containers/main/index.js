@@ -1,21 +1,11 @@
 import React from "react";
-import logo from "../../assets/images/logo.svg";
-import "./main.css";
 
-function App() {
-  return (
-    <div className="app">
-      <header className="app-header">
-        <img src={logo} className="app-logo" alt="logo" />
-        <p>
-          Edit <code>src/app.js</code> and save to reload.
-        </p>
-        <a className="app-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import NavigationBar from "../navigation_bar";
+
+const App = () => (
+  <div className="app">
+    <NavigationBar />
+  </div>
+);
 
 export default App;
