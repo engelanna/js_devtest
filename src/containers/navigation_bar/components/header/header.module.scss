@@ -1,15 +1,17 @@
-.navbar_container {
-  width: 100vw;
+.container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100vw;
+  padding: 0;
 }
 
 .username {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  cursor: not-allowed;
+  margin-left: 0.75rem;
+  margin-right: 1.5rem;
   color: black;
-  cursor: grab;
+  user-select: none;
 }
 
 .logo {

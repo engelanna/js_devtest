@@ -1,19 +1,13 @@
 import React from "react";
 
-import styles from "./navigation_bar.module.scss";
-import logo from "../../assets/images/logo.svg";
+import Header from "./components/header";
+import DropdownBar from "./components/dropdowns_bar";
 
-const Navbar = () => (
+const NavigationBar = () => (
   <nav className="navbar navbar-default">
     <Header />
+    <DropdownBar />
   </nav>
 );
 
-const Header = () => (
-  <div className={`${styles.navbar_container} container-fluid navbar-brand navbar-header`}>
-    <img src={logo} className={styles.logo} alt="logo" />
-    <div className={styles.username}>Anna is hardcoded</div>
-  </div>
-);
-
-export default Navbar;
+export default NavigationBar;
