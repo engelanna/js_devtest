@@ -2,10 +2,10 @@ import React from "react";
 
 import NavigationBar from "../navigation_bar";
 
-const App = () => (
+const Main = () => (
   <div className="app">
     <NavigationBar />
   </div>
 );
 
-export default App;
+export default Main;

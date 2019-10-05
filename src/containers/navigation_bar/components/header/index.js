@@ -4,7 +4,7 @@ import logo from "../../../../assets/images/logo.svg";
 import styles from "./header.module.scss";
 
 const Header = () => (
-  <div className={`${styles.container} container-fluid navbar-brand navbar-header`}>
+  <div className={`container-fluid navbar-brand navbar-header ${styles.container}`}>
     <img src={logo} className={styles.logo} alt="logo" />
     <div className={styles.username}>Anna is hardcoded</div>
   </div>
