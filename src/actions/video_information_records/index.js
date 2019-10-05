@@ -5,22 +5,26 @@ export const actionTypes = {
 };
 
 const actions = {
-  createVideoInformationRecord: content => ({
+  createVideoInformationRecord: attributes => ({
     type: actionTypes.CREATE_VIDEO_INFORMATION_RECORD,
     payload: {
-      id: 1,
-      content
+      ...attributes
     }
   }),
 
-  updateVideoInformationRecord: id => ({
+  updateVideoInformationRecord: (id, attributes) => ({
     type: actionTypes.UPDATE_VIDEO_INFORMATION_RECORD,
-    payload: { id }
+    payload: {
+      id: id,
+      ...attributes
+    }
   }),
 
   deleteVideoInformationRecord: id => ({
     type: actionTypes.DELETE_VIDEO_INFORMATION_RECORD,
-    payload: { id }
+    payload: {
+      id: id
+    }
   })
 };
 
