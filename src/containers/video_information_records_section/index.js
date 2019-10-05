@@ -1,18 +1,26 @@
 import React from "react";
-import { Route, withRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 
+import CreatePage from "./pages/create_page";
+import BrowsePage from "./pages/browse_page";
+import UpdatePage from "./pages/update_page";
+import DeletePage from "./pages/delete_page";
 import routes from "../../shared/config/routes.js";
 
-const VideoInformationRecordsSection = withRouter(({ match }) => (
-  <Route path={`${match.url}`}>
-    <Sections match={match} />
-  </Route>
-));
-
-const Sections = ({ match }) => {
+const VideoInformationRecordsSection = ({ match }) => {
   console.info(match);
 
-  return <div>Boom! Aaa</div>;
+  return (
+    <>
+      <Route component={BrowsePage} path={routes.video_information_records.browse} exact />
+
+      <Route component={CreatePage} path={routes.video_information_records.create} />
+
+      <Route component={UpdatePage} path={routes.video_information_records.update} />
+
+      <Route component={DeletePage} path={routes.video_information_records.delete} />
+    </>
+  );
 };
 
 export default VideoInformationRecordsSection;

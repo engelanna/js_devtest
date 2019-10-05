@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 import VideoInformationRecordsSection from "../video_information_records_section";
 import NavigationBar from "../navigation_bar";
@@ -18,9 +18,9 @@ const Main = () => (
 );
 
 const Sections = () => (
-  <Route path={routes.video_information_records.base}>
+  <div>
     <VideoInformationRecordsSection />
-  </Route>
+  </div>
 );
 
 export default Main;

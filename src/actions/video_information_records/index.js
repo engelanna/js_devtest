@@ -4,7 +4,7 @@ export const actionTypes = {
   DELETE_VIDEO_INFORMATION_RECORD: "deleteVideoInformationRecord"
 };
 
-const actions = {
+const actionCreators = {
   createVideoInformationRecord: attributes => ({
     type: actionTypes.CREATE_VIDEO_INFORMATION_RECORD,
     payload: {
@@ -28,4 +28,4 @@ const actions = {
   })
 };
 
-export default actions;
+export default actionCreators;
