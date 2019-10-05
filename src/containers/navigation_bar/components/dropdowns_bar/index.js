@@ -5,7 +5,7 @@ import VideoInformationRecordsDropdown from "./components/video_information_reco
 import styles from "./dropdowns_bar.module.scss";
 
 const DropdownsBar = () => (
-  <div className={styles.no_text_select}>
+  <div className={styles.disable_text_selection}>
     <VideoInformationRecordsDropdown />
   </div>
 );

@@ -15,16 +15,16 @@ const VideoInformationRecordsDropdown = () => (
 );
 
 const Header = () => (
-  <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+  <button className="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Video information records <span className="caret" />
-  </a>
+  </button>
 );
 
 const Links = () => {
   const { browse, create } = paths.video_information_records;
 
   return (
-    <ul className="dropdown-menu">
+    <ul className="nav-right dropdown-menu">
       <li>
         <Link to={browse} className="btn">
           Browse

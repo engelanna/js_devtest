@@ -5,21 +5,23 @@ const get_next_id = records => Math.max(Object.keys(records)) + 1;
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.CREATE_VIDEO_INFORMATION_RECORD: {
-      const { video_information_records } = state;
+    case actionTypes.CREATE_VIDEO_INFORMATION_RECORD:
+      {
+        const { video_information_records } = state;
 
-      state = {
-        ...state,
-        video_information_records: {
-          ...video_information_records,
-          [get_next_id(video_information_records)]: {
-            ...action.payload.attributes
+        state = {
+          ...state,
+          video_information_records: {
+            ...video_information_records,
+            [get_next_id(video_information_records)]: {
+              ...action.payload.attributes
+            }
           }
-        }
-      };
-    }
+        };
+      }
+      break;
 
-    case actionTypes.UPDATE_VIDEO_INFORMATION_RECORD: {
+    case actionTypes.UPDATE_VIDEO_INFORMATION_RECORD:
       state = {
         ...state,
         video_information_records: {
@@ -29,14 +31,17 @@ export default function(state = initialState, action) {
           }
         }
       };
-    }
+      break;
 
-    case actionTypes.DELETE_VIDEO_INFORMATION_RECORD: {
+    case actionTypes.DELETE_VIDEO_INFORMATION_RECORD:
       state = {
         ...state,
         video_information_records: state.video_information_records.filter(({ id }) => id !== action.payload.id)
       };
-    }
+      break;
+
+    default:
+      return state;
   }
   return state;
 }
