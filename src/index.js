@@ -7,7 +7,7 @@ import App from "./containers/main";
 // import rootReducer from "./reducers";
 import * as serviceWorker from "./server_tools/service_worker";
 
-import "./index.css";
+import "./index.scss";
 
 render(<App />, document.getElementById("root"));
 
