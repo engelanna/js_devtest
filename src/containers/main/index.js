@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 import VideoInformationRecordsSection from "../video_information_records_section";
 import NavigationBar from "../navigation_bar";
-import routes from "../../shared/config/routes.js";
+
+import styles from "./main.module.scss";
 
 const Main = () => (
-  <div className="container-fluid">
+  <div className={`container-fluid ${styles.gradient_background}`}>
     <Router>
       <NavigationBar />
 
