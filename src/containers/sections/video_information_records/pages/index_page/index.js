@@ -18,7 +18,7 @@ const IndexPage = ({ videoInformationRecords }) => (
 );
 
 IndexPage.propTypes = {
-  videoInformationRecords: PropTypes.object.isRequired
+  videoInformationRecords: PropTypes.array.isRequired
 };
 
 const mapStateToProps = (state, props) => ({

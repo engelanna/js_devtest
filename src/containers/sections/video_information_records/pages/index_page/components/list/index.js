@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Pagination from "react-js-pagination";
 
 import Row, { styles } from "./row";
 
-const List = ({ videoInformationRecords }) => (
-  <div className="col-md-12">
-    <Header />
-    {Object.keys(videoInformationRecords).map(record_id => (
-      <Row id={record_id} key={record_id} record={videoInformationRecords[record_id]} />
-    ))}
+const ITEMS_PER_PAGE = 1;
+
+const List = ({ videoInformationRecords }) => {
+  const [activePage, setActivePage] = useState(1);
+
+  const indexOfLastTodo = activePage * ITEMS_PER_PAGE;
+  const indexOfFirstTodo = indexOfLastTodo - ITEMS_PER_PAGE;
+  const paginatedRecords = videoInformationRecords.slice(indexOfFirstTodo, indexOfLastTodo);
+
+  return (
+    <div className="col-md-12">
+      <Header />
+
+      {paginatedRecords.map(record => (
+        <Row record={record} />
+      ))}
+      <PaginationSection records={videoInformationRecords} activePage={activePage} setActivePage={setActivePage} />
+    </div>
+  );
+};
+
+const PaginationSection = ({ records, activePage, setActivePage }) => (
+  <div className="text-center">
+    <Pagination
+      activePage={activePage}
+      itemsCountPerPage={ITEMS_PER_PAGE}
+      totalItemsCount={Object.keys(records).length}
+      onChange={setActivePage}
+    />
   </div>
 );
 
