@@ -5,8 +5,10 @@ import VideoInformationRecordsDropdown from "./components/video_information_reco
 import styles from "./dropdowns_bar.module.scss";
 
 const DropdownsBar = () => (
-  <div className={styles.disable_text_selection}>
-    <VideoInformationRecordsDropdown />
+  <div className="row">
+    <div className={`col-md-12 ${styles.disable_text_selection}`}>
+      <VideoInformationRecordsDropdown />
+    </div>
   </div>
 );
 

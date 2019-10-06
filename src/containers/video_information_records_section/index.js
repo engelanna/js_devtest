@@ -7,20 +7,16 @@ import UpdatePage from "./pages/update_page";
 import DeletePage from "./pages/delete_page";
 import routes from "../../shared/config/routes.js";
 
-const VideoInformationRecordsSection = ({ match }) => {
-  console.info(match);
-
-  return (
-    <>
-      <Route component={BrowsePage} path={routes.video_information_records.browse} exact />
-
-      <Route component={CreatePage} path={routes.video_information_records.create} />
-
+const VideoInformationRecordsSection = () => (
+  <>
+    <Route component={BrowsePage} path={routes.video_information_records.browse} exact>
       <Route component={UpdatePage} path={routes.video_information_records.update} />
 
       <Route component={DeletePage} path={routes.video_information_records.delete} />
-    </>
-  );
-};
+    </Route>
+
+    <Route component={CreatePage} path={routes.video_information_records.create} />
+  </>
+);
 
 export default VideoInformationRecordsSection;

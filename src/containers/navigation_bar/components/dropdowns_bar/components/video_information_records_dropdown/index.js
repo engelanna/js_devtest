@@ -6,16 +6,20 @@ import paths from "../../../../../../shared/config/routes.js";
 import styles from "./video_information_records_dropdown.module.scss";
 
 const VideoInformationRecordsDropdown = () => (
-  <ul className={`nav navbar-nav ${styles.menu_container}`}>
-    <li className="dropdown">
-      <Header />
-      <Links />
-    </li>
-  </ul>
+  <div className="row">
+    <div className="col-md-12">
+      <ul className={`nav navbar-right ${styles.menu_container}`}>
+        <li className="dropdown">
+          <Header />
+          <Links />
+        </li>
+      </ul>
+    </div>
+  </div>
 );
 
 const Header = () => (
-  <button className="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button className="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Video information records <span className="caret" />
   </button>
 );
@@ -24,7 +28,7 @@ const Links = () => {
   const { browse, create } = paths.video_information_records;
 
   return (
-    <ul className={`dropdown-menu pull-right ${styles.menu}`}>
+    <ul className={`dropdown-menu ${styles.menu}`}>
       <li>
         <Link to={browse} className={`btn ${styles.button}`}>
           Browse

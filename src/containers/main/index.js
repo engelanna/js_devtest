@@ -8,20 +8,22 @@ import styles from "./main.module.scss";
 
 const Main = () => (
   <div className={`container-fluid ${styles.gradient_background}`}>
-    <Router>
-      <NavigationBar />
+    <div className="col-md-12">
+      <Router>
+        <NavigationBar />
 
-      <Switch>
-        <Sections />
-      </Switch>
-    </Router>
+        <Switch>
+          <Sections />
+        </Switch>
+      </Router>
+    </div>
   </div>
 );
 
 const Sections = () => (
-  <div>
+  <>
     <VideoInformationRecordsSection />
-  </div>
+  </>
 );
 
 export default Main;
