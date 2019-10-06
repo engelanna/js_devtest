@@ -16,8 +16,8 @@ const RowAttributes = ({ record }) => (
       <a href={record.video_snapshot_url}>{record.video_snapshot_url}</a>
     </div>
     <div className="col-md-3">
-      <a href={record.video_snapshot_url} target="_blank">
-        <img className={styles.image} src={record.video_snapshot_thumbnail_url} />
+      <a href={record.video_snapshot_url} target="_blank" rel="noopener noreferrer">
+        <img className={styles.image} alt="thumbnail" src={record.video_snapshot_thumbnail_url} />
       </a>
     </div>
     <div className="col-md-3">{record.description}</div>
@@ -25,7 +25,6 @@ const RowAttributes = ({ record }) => (
 );
 
 Row.propTypes = {
-  id: PropTypes.string.isRequired,
   record: PropTypes.object.isRequired
 };
 
