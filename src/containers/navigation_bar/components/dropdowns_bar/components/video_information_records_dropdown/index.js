@@ -25,12 +25,12 @@ const Header = () => (
 );
 
 const Links = () => {
-  const { browse, create } = paths.video_information_records;
+  const { index, create } = paths.video_information_records;
 
   return (
     <ul className={`dropdown-menu ${styles.menu}`}>
       <li>
-        <Link to={browse} className={`btn ${styles.button}`}>
+        <Link to={index} className={`btn ${styles.button}`}>
           Browse
         </Link>
       </li>

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 
-import VideoInformationRecordsSection from "../video_information_records_section";
+import VideoInformationRecordsSection from "../sections/video_information_records";
 import NavigationBar from "../navigation_bar";
 
 import styles from "./main.module.scss";
