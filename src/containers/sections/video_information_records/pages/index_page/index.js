@@ -8,9 +8,7 @@ import actionCreators from "../../../../../actions/video_information_records";
 const IndexPage = ({ videoInformationRecords }) => (
   <div className="row">
     <div className="col-md-12 text-bold">
-      <h4 className="text-center">
-        <strong>Video information records</strong>
-      </h4>
+      <h4 className="text-center">Video information records</h4>
 
       <List videoInformationRecords={videoInformationRecords} />
     </div>

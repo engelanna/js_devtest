@@ -33,10 +33,11 @@ const List = ({ videoInformationRecords }) => {
 const Header = () => (
   <strong>
     <div className={`row ${styles.row}`}>
-      <div className="col-md-3">Title</div>
+      <div className="col-md-2">Title</div>
       <div className="col-md-3">Link</div>
-      <div className="col-md-3">Thumbnail</div>
-      <div className="col-md-3">Description</div>
+      <div className="col-md-2 text-center">Thumbnail</div>
+      <div className="col-md-2">Description</div>
+      <div className="col-md-3">Actions</div>
     </div>
   </strong>
 );

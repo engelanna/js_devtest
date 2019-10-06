@@ -20,4 +20,5 @@ const paginateRecords = (records, activePage, perPage) => {
 };
 
 export { paginateRecords };
+
 export default PaginationSection;
