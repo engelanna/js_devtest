@@ -1,37 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./video_information_record_list.module.scss";
+import Row, { styles } from "./row";
 
 const List = ({ videoInformationRecords }) => (
-  <>
+  <div className="col-md-12">
+    <Header />
     {Object.keys(videoInformationRecords).map(record_id => (
-      <Row key={record_id} record={videoInformationRecords[record_id]} />
+      <Row id={record_id} key={record_id} record={videoInformationRecords[record_id]} />
     ))}
-  </>
+  </div>
 );
 
-const Row = ({ id, record }) => (
-  <div className="row" key={id}>
-    <div className="col-md-8 col-md-offset-2">
-      <RowTitle title={record.title} />
-      <RowAttributes record={record} />
+const Header = () => (
+  <strong>
+    <div className={`row ${styles.row}`}>
+      <div className="col-md-3">Title</div>
+      <div className="col-md-3">Link</div>
+      <div className="col-md-3">Thumbnail</div>
+      <div className="col-md-3">Description</div>
     </div>
-  </div>
-);
-
-const RowTitle = ({ title }) => (
-  <p className={`text-center ${styles.row_title}`}>
-    <strong>{title}</strong>
-  </p>
-);
-
-const RowAttributes = ({ record }) => (
-  <div className="list-group-item">
-    <p>video_snapshot_thumbnail_url: {record.video_snapshot_thumbnail_url}</p>
-    <p>video_snapshot_url: {record.video_snapshot_url}</p>
-    <p>description: {record.description}</p>
-  </div>
+  </strong>
 );
 
 List.propTypes = {
