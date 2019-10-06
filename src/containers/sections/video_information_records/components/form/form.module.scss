@@ -1,4 +1,9 @@
-.row,
 .button {
   margin-top: 2rem;
+}
+
+.row {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
 }

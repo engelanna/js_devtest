@@ -8,7 +8,7 @@ const actionCreators = {
   createVideoInformationRecord: attributes => ({
     type: actionTypes.CREATE_VIDEO_INFORMATION_RECORD,
     payload: {
-      ...attributes
+      attributes: attributes
     }
   }),
 
@@ -16,7 +16,7 @@ const actionCreators = {
     type: actionTypes.UPDATE_VIDEO_INFORMATION_RECORD,
     payload: {
       id: id,
-      ...attributes
+      attributes: attributes
     }
   }),
 

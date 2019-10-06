@@ -8,12 +8,12 @@ import routes from "../../../../../../../../shared/config/routes.js";
 
 const Row = ({ id, record }) => (
   <div className={`row ${styles.row}`} key={id}>
-    <RowAttributes record={record} />
-    <ActionLinks record={record} />
+    <Columns record={record} />
+    <ActionLinks id={id} />
   </div>
 );
 
-const RowAttributes = ({ record }) => (
+const Columns = ({ record }) => (
   <>
     <div className="col-md-2">{record.title}</div>
     <div className="col-md-3">
@@ -28,9 +28,9 @@ const RowAttributes = ({ record }) => (
   </>
 );
 
-const ActionLinks = ({ record }) => {
-  const editLink = routes.video_information_records.edit.replace(":id", record.id);
-  const deleteLink = routes.video_information_records.delete.replace(":id", record.id);
+const ActionLinks = ({ id }) => {
+  const editLink = routes.video_information_records.edit.replace(":id", id);
+  const deleteLink = routes.video_information_records.delete.replace(":id", id);
 
   return (
     <>

@@ -1,29 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styles from "./form.module.scss";
 
-const Form = ({ record, onSave }) => (
-  <>
-    <div className="col-md-8 col-md-offset-1">
-      <Row label={"Title:"} value={record.title} />
-      <Row label={"URL:"} value={record.video_snapshot_url} />
-      <Row label={"Thumbnail URL:"} value={record.video_snapshot_thumbnail_url} />
-      <Row label={"Description:"} value={record.description} />
-      <Row label={"Description:"} value={record.description} />
-    </div>
-    <div className="col-md-8 col-md-offset-2 text-center">
-      <button onClick={onSave} className={`btn btn-primary text-center ${styles.button}`}>
-        Update!
-      </button>
-    </div>
-  </>
+const Form = ({ attributes, onSubmit }) => {
+  const [formState, setFormState] = useState({ ...attributes });
+
+  return (
+    <>
+      <Rows state={formState} setState={setFormState} />
+      <SubmitButton onClick={() => onSubmit(formState)} />
+    </>
+  );
+};
+
+const SubmitButton = ({ onClick }) => (
+  <div className="col-md-8 col-md-offset-2 text-center">
+    <button onClick={onClick} className={`btn btn-primary text-center ${styles.button}`}>
+      Update!
+    </button>
+  </div>
 );
 
-const Row = ({ label, value }) => (
+const Rows = ({ state, setState }) => (
+  <div className="form-group col-md-8 col-md-offset-1">
+    {Object.keys(ROW_TITLES).map(key => (
+      <Row key={key} attributeName={key} state={state} setState={setState} />
+    ))}
+  </div>
+);
+
+const ROW_TITLES = {
+  title: "Title:",
+  video_snapshot_url: "URL:",
+  video_snapshot_thumbnail_url: "Thumbnail URL:",
+  description: "Description:"
+};
+
+const Row = ({ attributeName, state, setState }) => (
   <div className={`row ${styles.row}`}>
-    <div className="col-md-2 text-right">{label}</div>
+    <div className="col-md-2 text-right">{ROW_TITLES[attributeName]}</div>
     <div className="col-md-10">
-      <input className="form-control" value={value} />
+      <input
+        className="form-control"
+        value={state[attributeName]}
+        onChange={event => setState({ ...state, [attributeName]: event.target.value })}
+      />
     </div>
   </div>
 );

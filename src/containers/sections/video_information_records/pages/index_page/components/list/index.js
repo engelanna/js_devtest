@@ -7,28 +7,35 @@ import Row, { styles } from "./row";
 const ITEMS_PER_PAGE = 1;
 
 const List = ({ videoInformationRecords }) => {
+  const asList = Object.values(videoInformationRecords);
   const [activePage, setActivePage] = useState(1);
-  const paginatedRecords = paginateRecords(videoInformationRecords, activePage, ITEMS_PER_PAGE);
+  const paginatedList = paginateRecords(asList, activePage, ITEMS_PER_PAGE);
 
   return (
     <div className="col-md-12">
       <Header />
-
-      {paginatedRecords.map(record => (
-        <Row record={record} key={videoInformationRecords.indexOf(record)} />
-      ))}
+      <PaginatedRows allRecords={videoInformationRecords} paginatedList={paginatedList} />
 
       <div className="text-center">
         <Pagination
           perPage={ITEMS_PER_PAGE}
           activePage={activePage}
           onChange={setActivePage}
-          totalItemsCount={videoInformationRecords.length}
+          totalItemsCount={asList.length}
         />
       </div>
     </div>
   );
 };
+
+const PaginatedRows = ({ paginatedList, allRecords }) =>
+  paginatedList.map(record => {
+    const id = getKeyByValue(allRecords, record);
+
+    return <Row record={record} id={id} key={id} />;
+  });
+
+const getKeyByValue = (object, value) => Object.keys(object).find(key => object[key] === value);
 
 const Header = () => (
   <strong>
@@ -43,7 +50,7 @@ const Header = () => (
 );
 
 List.propTypes = {
-  videoInformationRecords: PropTypes.array.isRequired
+  videoInformationRecords: PropTypes.object.isRequired
 };
 
 export default List;

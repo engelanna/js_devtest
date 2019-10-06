@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import List from "./components/list";
-import actionCreators from "../../../../../actions/video_information_records";
 
 const IndexPage = ({ videoInformationRecords }) => (
   <div className="row">
@@ -16,7 +15,7 @@ const IndexPage = ({ videoInformationRecords }) => (
 );
 
 IndexPage.propTypes = {
-  videoInformationRecords: PropTypes.array.isRequired
+  videoInformationRecords: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state, props) => ({
