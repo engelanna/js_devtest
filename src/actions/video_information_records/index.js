@@ -1,4 +1,4 @@
-export const actionTypes = {
+const actionTypes = {
   CREATE_VIDEO_INFORMATION_RECORD: "createVideoInformationRecord",
   UPDATE_VIDEO_INFORMATION_RECORD: "updateVideoInformationRecord",
   DELETE_VIDEO_INFORMATION_RECORD: "deleteVideoInformationRecord"
@@ -27,5 +27,7 @@ const actionCreators = {
     }
   })
 };
+
+export { actionTypes };
 
 export default actionCreators;
