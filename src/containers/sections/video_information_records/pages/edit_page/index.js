@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Redirect, withRouter } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { bindActionCreators } from "redux";
 
 import Form from "../../components/form";
@@ -10,19 +10,19 @@ import routes from "../../../../../shared/config/routes.js";
 
 class EditPage extends Component {
   state = {
-    shouldRedirect: false
+    shouldRedirectToIndex: false
   };
 
   updateVideoInformationRecord = attributes => {
     this.props.updateVideoInformationRecord(this.props.id, attributes);
-    this.setState({ shouldRedirect: true });
+    this.setState({ shouldRedirectToIndex: true });
   };
 
   render() {
     const { attributes } = this.props;
-    const { shouldRedirect } = this.state;
+    const { shouldRedirectToIndex } = this.state;
 
-    return shouldRedirect ? (
+    return shouldRedirectToIndex ? (
       <RedirectToIndex />
     ) : (
       <>
@@ -55,9 +55,7 @@ const mapDispatchToProps = dispatch => ({
   updateVideoInformationRecord: bindActionCreators(actionCreators.updateVideoInformationRecord, dispatch)
 });
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(EditPage)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditPage);

@@ -7,7 +7,7 @@ import Row, { styles } from "./row";
 const ITEMS_PER_PAGE = 1;
 
 const List = ({ videoInformationRecords }) => {
-  const asList = Object.values(videoInformationRecords);
+  const asList = Object.values(videoInformationRecords).reverse();
   const [activePage, setActivePage] = useState(1);
   const paginatedList = paginateRecords(asList, activePage, ITEMS_PER_PAGE);
 

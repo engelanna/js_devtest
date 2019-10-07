@@ -42,7 +42,7 @@ const Row = ({ attributeName, state, setState }) => (
     <div className="col-md-10">
       <input
         className="form-control"
-        value={state[attributeName]}
+        value={state[attributeName] || ""}
         onChange={event => setState({ ...state, [attributeName]: event.target.value })}
       />
     </div>

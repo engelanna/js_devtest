@@ -10,7 +10,7 @@ export default function(state = initialState, action) {
     case actionTypes.CREATE_VIDEO_INFORMATION_RECORD:
       newState = {
         ...state,
-        [getNextId(state.videoInformationRecords)]: action.payload.attributes
+        [getNextId(state)]: action.payload.attributes
       };
       break;
 
@@ -22,9 +22,10 @@ export default function(state = initialState, action) {
       break;
 
     case actionTypes.DELETE_VIDEO_INFORMATION_RECORD:
+      const { [action.payload.id]: _targetRecord, ...withoutTargetRecord } = state;
+
       newState = {
-        ...state,
-        video_information_records: state.video_information_records.filter(({ id }) => id !== action.payload.id)
+        ...withoutTargetRecord
       };
       break;
 
