@@ -19,7 +19,12 @@ const VideoInformationRecordsDropdown = () => (
 );
 
 const Header = () => (
-  <button className="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button
+    className={`btn dropdown-toggle ${styles.menu_button}`}
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
     Video information records <span className="caret" />
   </button>
 );
@@ -30,13 +35,13 @@ const Links = () => {
   return (
     <ul className={`dropdown-menu ${styles.menu}`}>
       <li>
-        <Link to={index} className={`btn ${styles.button}`}>
+        <Link to={index} className={`btn ${styles.action_button}`}>
           Browse
         </Link>
       </li>
       <li role="separator" className={`divider ${styles.divider}`} />
       <li>
-        <Link to={create} className={`btn ${styles.button}`}>
+        <Link to={create} className={`btn ${styles.action_button}`}>
           Create
         </Link>
       </li>

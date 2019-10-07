@@ -16,7 +16,7 @@ const Form = ({ attributes, onSubmit }) => {
 const SubmitButton = ({ onClick }) => (
   <div className="col-md-8 col-md-offset-2 text-center">
     <button onClick={onClick} className={`btn btn-primary text-center ${styles.button}`}>
-      Update!
+      Submit
     </button>
   </div>
 );

@@ -13,8 +13,12 @@
     min-height: 0.5vh;
   }
 
-  .button {
+  .action_button {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }
+}
+
+.menu_button:active {
+  color: white;
 }
