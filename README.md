@@ -1,5 +1,7 @@
 **Task:** https://github.com/pbc/frontend-devtest
 
+**Time:** 2 days
+
 **Some notes**
 - Only reducer tests
 - Made without a #show view (makes you aware why it's useful: rerouting to #index after create/update has different targets otherwise!)
